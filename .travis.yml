@@ -1,8 +1,9 @@
 language: php
   - '7.0'
-  - hhvm # on Trusty only
+  - hhvm
   - nightly
 before_install:
   - travis_retry composer self-update
   - composer install
-script: phpunit --bootstrap vendor/autoload.php test
+script:
+  - phpunit --bootstrap vendor/autoload.php test

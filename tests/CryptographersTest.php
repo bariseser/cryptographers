@@ -1,7 +1,5 @@
 <?php
 
-use Bariseser;
-
 use PHPUnit\Framework\TestCase;
 
 class CryptographersTest extends TestCase

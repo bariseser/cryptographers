@@ -4,7 +4,8 @@ namespace Bariseser;
 
 /**
  * Class Cryptographers
- * @package Bariseser
+ *
+ * @author  Baris Eser <bariseser@gmail.com>
  */
 class Cryptographers
 {
@@ -25,11 +26,12 @@ class Cryptographers
     public static $salt = "";
 
     /**
+     * Create Encrypted Data
+     *
      * @param string $data
-     * @param string $salt
      * @return string
      */
-    public static function encrypt(string $data)
+    public static function encrypt(string $data): string
     {
         if (strlen($data) == 0) {
             throw new \RuntimeException("Data cannot be empty");
@@ -41,10 +43,9 @@ class Cryptographers
 
     /**
      * @param string $data
-     * @param string $salt
      * @return string
      */
-    public static function decrypt(string $data)
+    public static function decrypt(string $data) :string
     {
         if (strlen($data) == 0) {
             throw new \InvalidArgumentException("Data cannot be empty");
@@ -72,7 +73,7 @@ class Cryptographers
     }
 
     /**
-     * @param int $byte
+     * @param  int $byte
      * @return string
      */
     public static function getRandomByte(): string
@@ -81,7 +82,7 @@ class Cryptographers
     }
 
     /**
-     * @param int $byte
+     * @param  int $byte
      * @return string
      */
     public static function chipperLength(): int
@@ -99,7 +100,7 @@ class Cryptographers
 
 
     /**
-     * @param string $data
+     * @param  string $data
      * @return array
      */
     private static function getEncryptedData(string $data): array

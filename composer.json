@@ -1,0 +1,39 @@
+{
+  "name": "bariseser/cryptographers",
+  "type": "library",
+  "description": "PHP encoder/decoder according to OpenSSL",
+  "keywords": [
+    "php",
+    "hash",
+    "decode",
+    "decoder",
+    "openssl",
+    "password"
+  ],
+  "homepage": "https://github.com/bariseser/cryptographers",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Baris Eser",
+      "email": "bariseser@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.0"
+  },
+  "require-dev": {
+    "php": ">=7.0",
+    "phpunit/phpunit": "^8.2.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Bariseser\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Bariseser\\": "tests/"
+    }
+  }
+}

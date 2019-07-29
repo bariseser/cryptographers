@@ -1,8 +1,6 @@
 language: php
 
 php:
-  - 7.0
-  - 7.1
   - 7.2
   - hhvm
   - nightly
@@ -12,4 +10,4 @@ before_install:
   - composer install
 
 script:
-  - phpunit --bootstrap vendor/autoload.php test
+  - phpunit --bootstrap vendor/autoload.php

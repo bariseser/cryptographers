@@ -31,7 +31,7 @@ class Cryptographers
      * @param string $data
      * @return string
      */
-    public static function encrypt(string $data): string
+    public static function encrypt(string $data)
     {
         if (strlen($data) == 0) {
             throw new \RuntimeException("Data cannot be empty");
@@ -45,7 +45,7 @@ class Cryptographers
      * @param string $data
      * @return string
      */
-    public static function decrypt(string $data) :string
+    public static function decrypt(string $data)
     {
         if (strlen($data) == 0) {
             throw new \InvalidArgumentException("Data cannot be empty");
@@ -67,7 +67,7 @@ class Cryptographers
     /**
      * @return array
      */
-    public static function getCipherMethods(): array
+    public static function getCipherMethods()
     {
         return openssl_get_cipher_methods();
     }
@@ -76,7 +76,7 @@ class Cryptographers
      * @param  int $byte
      * @return string
      */
-    public static function getRandomByte(): string
+    public static function getRandomByte()
     {
         return substr(str_shuffle(self::$alphabet), 0, self::chipperLength());
     }
@@ -85,7 +85,7 @@ class Cryptographers
      * @param  int $byte
      * @return string
      */
-    public static function chipperLength(): int
+    public static function chipperLength()
     {
         return openssl_cipher_iv_length(self::$chipper);
     }
@@ -93,7 +93,7 @@ class Cryptographers
     /**
      * @param string $alphabet
      */
-    public static function setAlphabet(string $alphabet): void
+    public static function setAlphabet(string $alphabet)
     {
         self::$alphabet = $alphabet;
     }
@@ -103,7 +103,7 @@ class Cryptographers
      * @param  string $data
      * @return array
      */
-    private static function getEncryptedData(string $data): array
+    private static function getEncryptedData(string $data)
     {
         return explode(".", $data);
     }
@@ -111,7 +111,7 @@ class Cryptographers
     /**
      * @return string
      */
-    public static function getSalt(): string
+    public static function getSalt()
     {
         return self::$salt;
     }
@@ -119,7 +119,7 @@ class Cryptographers
     /**
      * @param string $salt
      */
-    public static function setSalt(string $salt): void
+    public static function setSalt(string $salt)
     {
         self::$salt = $salt;
     }

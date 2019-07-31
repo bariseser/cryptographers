@@ -18,7 +18,7 @@ Features
 
 System requirements
 ---
-* PHP >= 5.6
+* PHP >= 7.0
 * openSSL
 
 Example

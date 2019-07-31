@@ -13,7 +13,7 @@ class Cryptographers
     /**
      * @var string
      */
-    public static $chipper = "aes-256-ctr";
+    public static $chipper = "aes-256-cbc";
 
     /**
      * @var string
@@ -38,7 +38,7 @@ class Cryptographers
         }
 
         $iv = self::getRandomByte();
-        return $iv . "." . openssl_encrypt($data, self::$chipper, self::getSalt(), $options = 0, $iv);
+        return $iv . "." . base64_encode(openssl_encrypt($data, self::$chipper, self::getSalt(), $options = 0, $iv));
     }
 
     /**
@@ -51,7 +51,7 @@ class Cryptographers
             throw new \InvalidArgumentException("Data cannot be empty");
         }
 
-        return openssl_decrypt(self::getEncryptedData($data)[1], self::$chipper, self::getSalt(), $options = 0, self::getEncryptedData($data)[0]);
+        return openssl_decrypt(base64_decode(self::getEncryptedData($data)[1]), self::$chipper, self::getSalt(), $options = 0, self::getEncryptedData($data)[0]);
     }
 
     /**
